@@ -1,4 +1,4 @@
-import { userRouter } from "./users/users.js";
+import { userRouter } from "./src/users/users.js";
 import express from 'express';
 const port = 8000;
 const app = express();
