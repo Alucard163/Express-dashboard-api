@@ -6,6 +6,7 @@ import { Ilogger } from './logger/logger.interface';
 import { inject, injectable } from 'inversify';
 import { TYPES } from './types';
 import 'reflect-metadata';
+import { json } from 'body-parser';
 
 @injectable()
 export class App {
@@ -29,7 +30,12 @@ export class App {
 		this.app.use(this.exceptionFilter.catch.bind(this.exceptionFilter));
 	}
 
+	useMiddleware(): void {
+		this.app.use(json());
+	}
+
 	public async init(): Promise<void> {
+		this.useMiddleware();
 		this.useRoutes();
 		this.useExceptionFilters();
 		this.server = this.app.listen(this.port);
