@@ -6,11 +6,15 @@ import { IExceptionFilter } from './errors/exeption.filter.interface';
 import { Container, ContainerModule, interfaces } from 'inversify';
 import { Ilogger } from './logger/logger.interface';
 import { TYPES } from './types';
+import { IUserController } from './users/users.controller.interface';
+import { IUserService } from './users/users.service.interface';
+import { UserService } from './users/users.service';
 
 export const appBindings = new ContainerModule((bind: interfaces.Bind) => {
 	bind<Ilogger>(TYPES.ILogger).to(LoggerService);
 	bind<IExceptionFilter>(TYPES.ExceptionFilter).to(ExceptionFilter);
-	bind<UserController>(TYPES.UserController).to(UserController);
+	bind<IUserController>(TYPES.UserController).to(UserController);
+	bind<IUserService>(TYPES.UserService).to(UserService);
 	bind<App>(TYPES.Application).to(App);
 });
 
