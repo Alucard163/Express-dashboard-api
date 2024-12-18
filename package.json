@@ -9,12 +9,14 @@
     "dev": "nodemon",
     "lint": "eslint ./src/**",
     "lint:fix": "eslint ./src/** --fix",
+    "generate": "prisma generate",
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Roman Litvinenko",
   "license": "ISC",
   "dependencies": {
+    "@prisma/client": "^3.3.0",
     "body-parser": "^1.20.3",
     "express": "^4.18.2",
     "bcryptjs": "^2.4.3",
@@ -33,6 +35,7 @@
     "eslint": "^8.40.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^4.2.1",
+    "prisma": "^3.3.0",
     "prettier": "^2.8.8",
     "typescript": "^5.0.4",
     "nodemon": "^2.0.13",
