@@ -1,6 +1,6 @@
 import { App } from './app';
 import { LoggerService } from './logger/logger.service';
-import { UserController } from './users/UsersController';
+import { UserController } from './users/users.controller';
 import { ExceptionFilter } from './errors/exception.filter';
 import { IExceptionFilter } from './errors/exeption.filter.interface';
 import { Container, ContainerModule, interfaces } from 'inversify';
