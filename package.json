@@ -11,7 +11,8 @@
     "lint:fix": "eslint ./src/** --fix",
     "generate": "prisma generate",
     "build": "tsc",
-    "test": "jest"
+    "test": "jest",
+    "test:e2e": "jest --config jest.e2e.config.ts --coverage"
   },
   "author": "Roman Litvinenko",
   "license": "ISC",
